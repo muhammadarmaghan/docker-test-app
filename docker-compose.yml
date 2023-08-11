@@ -1,0 +1,33 @@
+version: "1.0.3"
+services:
+
+  redis-server:
+    image: "redis:3"
+    restart: always
+    ports:
+     - "6379:6379"   
+
+  mongo:
+    image: mongo:4.4.12
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb:/data/db
+
+  Docker-Test-App:
+    image: armaghan0006/docker-test-app:1.0.3
+    # build: .
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+      - redis-server
+
+    environment:
+      - mongoCon=mongodb://localhost:27017/nodejs-redis
+      - REDIS_HOST=localhost
+      
+volumes:
+ mongodb:
