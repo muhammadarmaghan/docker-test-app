@@ -1,4 +1,4 @@
-version: "1.0.3"
+version: "3"
 services:
 
   redis-server:
@@ -29,5 +29,6 @@ services:
       - mongoCon=mongodb://mongo:27017/nodejs-redis
       - REDIS_HOST=redis-server
       - JWT_KEY = SecretjwtKey
+      - PORT = 3000
 volumes:
  mongodb:
