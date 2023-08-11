@@ -27,7 +27,7 @@ services:
 
     environment:
       - mongoCon=mongodb://localhost:27017/nodejs-redis
-      - REDIS_HOST=localhost
-      
+      - REDIS_HOST=redis-server
+      - JWT_KEY = SecretjwtKey
 volumes:
  mongodb:
