@@ -28,7 +28,7 @@ services:
     environment:
       - mongoCon=mongodb://mongo:27017/nodejs-redis
       - REDIS_HOST=redis-server
-      - JWT_KEY = SecretjwtKey
-      - PORT = 3000
+      - JWT_KEY=SecretjwtKey
+      - PORT=3000
 volumes:
  mongodb:
